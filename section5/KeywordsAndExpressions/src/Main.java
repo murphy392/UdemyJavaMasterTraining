@@ -14,5 +14,10 @@ public class Main {
         if ((health < 25) && (highScore > 1000)) {
             highScore = highScore - 1000;
         }
+
+        /*
+        the next video is about whitespace and indenting. There WILL NOT be a "Java Project" for that video as
+        I am already familiar with that java coding concept.
+         */
     }
 }
