@@ -39,7 +39,7 @@ public class Main {
     }
 
     public static String getDurationString(int seconds, int minutes) {
-        if ((minutes < 0) || ((seconds < 0) || seconds > 59 )) {
+        if ((minutes < 0) || ((seconds <= 0) || seconds >= 59 )) {
             return "Invalid Value";
         }
 
