@@ -1,7 +1,192 @@
 public class Main {
+
+
+
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
 
-    
+    public static void numberToWords(int number) {
+        String INVALID_VALUE_MESSAGE = "Invalid Value";
+        int reversedNumber = reverse(number);
+        int digitCount = getDigitCount(number);
+
+        if (number < 0) {
+            System.out.println(INVALID_VALUE_MESSAGE);
+        } else if (number == 0) {
+            System.out.println("Zero");
+        }
+
+        int caseNumber = 0;
+        while (reversedNumber > 0 ) {
+            caseNumber = reversedNumber % 10;
+            switch (caseNumber) {
+                case 0 -> {
+                    System.out.println("Zero");
+                    reversedNumber /= 10;
+                    digitCount--;
+                    break;
+                }
+                case 1 -> {
+                    System.out.println("One");
+                    reversedNumber /= 10;
+                    digitCount--;
+                    break;
+                }
+                case 2 -> {
+                    System.out.println("Two");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+                case 3 -> {
+                    System.out.println("Three");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+                case 4 -> {
+                    System.out.println("Four");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+                case 5 -> {
+                    System.out.println("Five");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+                case 6 -> {
+                    System.out.println("Six");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+                case 7 -> {
+                    System.out.println("Seven");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+                case 8 -> {
+                    System.out.println("Eight");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+                case 9 -> {
+                    System.out.println("Nine");
+                    reversedNumber /= 10;
+                    digitCount--;
+                }
+            }
+        }
+
+        if (number != 0) {
+            for (int i = 1; i <= digitCount; i++){
+                System.out.println("Zero");
+            }
+        }
+    }
+
+    public static int reverse(int number){
+        int reverse = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            reverse += digit;
+            number /= 10;
+            if (number == 0) {
+                break;
+            }
+            reverse *= 10;
+        }
+        return reverse;
+    }
+
+    //
+    public static int getDigitCount(int number){
+        int digitCount = 0;
+        if (number < 0){
+            return -1;
+        } else if (number == 0) {
+            return digitCount = 1;
+        }
+
+        while (true) {
+            digitCount++;
+            number /= 10;
+            if (number == 0) {
+                break;
+            }
+        }
+
+        return digitCount;
+    }
+
+//      Instructor solution
+//    public static int reverse(int number) {
+//
+//        int reverse = 0;
+//        while (number != 0) {
+//            // multiply by 10 then and add last digit (number % 10)
+//            reverse = reverse * 10 + number % 10;
+//            number /= 10; // discard last digit
+//        }
+//        return reverse;
+//    }
+//
+//    public static int getDigitCount(int number) {
+//
+//        if (number < 0) {
+//            return -1;
+//        }
+//
+//        if (number == 0) {
+//            return 1;
+//        }
+//
+//        int count = 0;
+//        // start from 1 and multiply by 10 each step so i goes 1, 10, 100, 1000
+//        // count how many times it was multiplied, and that's the digit count
+//        for (int i = 1; i <= number; i *= 10) {
+//            count++;
+//        }
+//        return count;
+//    }
+//
+//    public static void numberToWords(int number) {
+//
+//        if (number < 0) {
+//            System.out.println("Invalid Value");
+//            return;
+//        }
+//
+//        // get reversed number
+//        int reverse = reverse(number);
+//
+//        // subtract numberDigits and reverseDigits to get leading zeroes
+//        int leadingZeroes = getDigitCount(number) - getDigitCount(reverse);
+//
+//        if (number == 0) {
+//            System.out.println("Zero");
+//            return;
+//        }
+//
+//        // use loop to print words
+//        while (reverse != 0) {
+//            int lastDigit = reverse % 10;
+//            switch (lastDigit) {
+//                case 0 -> System.out.println("Zero");
+//                case 1 -> System.out.println("One");
+//                case 2 -> System.out.println("Two");
+//                case 3 -> System.out.println("Three");
+//                case 4 -> System.out.println("Four");
+//                case 5 -> System.out.println("Five");
+//                case 6 -> System.out.println("Six");
+//                case 7 -> System.out.println("Seven");
+//                case 8 -> System.out.println("Eight");
+//                case 9 -> System.out.println("Nine");
+//            }
+//            reverse /= 10;
+//        }
+//
+//        // print zeroes if there are any leading zeroes in reversed number
+//        for (int i = 0; i < leadingZeroes; i++) {
+//            System.out.println("Zero");
+//        }
+//    }
 }
