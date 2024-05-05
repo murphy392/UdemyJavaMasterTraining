@@ -6,6 +6,11 @@ public class Account {
     private String customerEmail;
     private String customerPhoneNo;
 
+    //Constructors video start
+    public Account () {
+        System.out.println("Empty constructor called");
+    }
+
     public String getCustomerPhoneNo() {
         return customerPhoneNo;
     }
