@@ -8,7 +8,18 @@ public class Account {
 
     //Constructors video start
     public Account () {
+        this("Test","0", 0.0d, "Test", "test@test.com","000-000-0000");
         System.out.println("Empty constructor called");
+    }
+
+    public Account(String accountName, String accountNumber, double accountBalance, String customerName, String customerEmail, String customerPhoneNo){
+        System.out.println("Account constructor with parameters called");
+        this.accountName = accountName;
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhoneNo = customerPhoneNo;
     }
 
     public String getCustomerPhoneNo() {

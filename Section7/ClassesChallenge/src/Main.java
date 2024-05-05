@@ -14,12 +14,13 @@ public class Main {
      */
     public static void main(String[] args) {
         Account account = new Account();
-        account.setAccountName("Checking Account");
-        account.setAccountNumber("0000000001A");
-        account.setCustomerEmail("craig.murphy@gmail.com");
-        account.setCustomerName("Craig Murphy"); //This would normally be split into first/last name fields
-        account.setCustomerPhoneNo("123-456-7890"); //There would also normally be validation on phone and e-mail
-        account.setAccountBalance(1000.00d);
+        Account craigAccount = new Account("Checking Account", "0000000001A", 1000.00d, "Craig Murphy", "craig.murphy@gmail.com", "123-456-7890");
+//        account.setAccountName("Checking Account");
+//        account.setAccountNumber("0000000001A");
+//        account.setCustomerEmail("craig.murphy@gmail.com");
+//        account.setCustomerName("Craig Murphy"); //This would normally be split into first/last name fields
+//        account.setCustomerPhoneNo("123-456-7890"); //There would also normally be validation on phone and e-mail
+//        account.setAccountBalance(1000.00d);
 
         System.out.println(account.deposit(.50));
         System.out.println(account.withdraw(500.0));
