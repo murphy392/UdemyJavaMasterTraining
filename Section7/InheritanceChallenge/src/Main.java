@@ -10,6 +10,10 @@ public class Main {
     ex: salaried = retire. Hourly = getDoublePay
      */
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        SalariedEmployee salary = new SalariedEmployee("Craig", "05/25/1993",10001928, "05/01/2014",100000d);
+        System.out.println(salary.collectPay());
+        salary.retire();
+        System.out.println(salary.getIsRetired());
+        System.out.println("Age = " + salary.getAge());
     }
 }

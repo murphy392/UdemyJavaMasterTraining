@@ -10,6 +10,8 @@ public class Worker {
     public void terminate(String endDate) - done
      */
 
+    public Worker(){}
+
     //There could be another constructor that includes endDate but ONLY for creating historical data
     public Worker(String name, String birthDate) {
         this.name = name;
@@ -17,16 +19,26 @@ public class Worker {
     }
 
     public int getAge() {
-        //implement logic to get the age
-        return 0;
+        int currentYear = 2025;
+        int birthYear = Integer.parseInt(birthDate.substring(6));
+
+        return (currentYear - birthYear);
     }
 
     public double collectPay(){
-        //implement logic to collect pay
         return 0.0d;
     }
 
     public void terminate(String endDate){
         this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Worker{" +
+                "name='" + name + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                '}';
     }
 }
